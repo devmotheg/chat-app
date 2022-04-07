@@ -1,0 +1,36 @@
+/*!
+ * @author Mohamed Muntasir
+ * @link https://github.com/devmotheg
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply text-[length:16px] selection:bg-pink-200 selection:text-slate-800;
+	}
+	button {
+		@apply disabled:cursor-not-allowed;
+	}
+}
+
+*::-webkit-scrollbar {
+	width: 0.5rem;
+	padding: 0.1rem;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: transparent;
+	border-radius: 1rem;
+	transition: 0.15s all;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+	background: rgb(251 207 232);
+}
