@@ -24,14 +24,22 @@ const Main = () => {
 		unknown,
 		ChannelDocument | DirectDocument | void,
 		["direction", typeof direction, typeof directionId]
-	>(["direction", direction, directionId], async ({ queryKey }) => {
-		if (queryKey[2]) {
-			const res = await axios(
-				`/api/users/${session?.id}/${queryKey[1]}s/${queryKey[2]}`
-			);
-			return res.data.data[direction];
+	>(
+		["direction", direction, directionId],
+		async ({ queryKey }) => {
+			if (queryKey[2]) {
+				const res = await axios(
+					`/api/users/${session?.id}/${queryKey[1]}s/${queryKey[2]}`
+				);
+				return res.data.data[direction];
+			}
+		},
+		{
+			onError: () => {
+				router.push("/404");
+			},
 		}
-	});
+	);
 
 	return router.query.add === "channel" || router.query.add === "directs" ? (
 		<MainAddDirection />
