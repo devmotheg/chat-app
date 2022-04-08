@@ -1,4 +1,4 @@
-# Blogging App
+# Chat App
 
 A poor man's attempt to build an efficient realtime chat application... (Spoiler: kinda failed.)
 
@@ -15,7 +15,7 @@ A poor man's attempt to build an efficient realtime chat application... (Spoiler
 
 ### Users
 
-- Sign up/in with google.
+- Sign up/in with Google.
 - Can be seen as online/offline by their directs.
 - Obviously send messages and react to them.
 
