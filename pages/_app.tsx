@@ -15,10 +15,6 @@ import type { AppPropsWithAuth } from "../types";
 import { AppProvider, SocketProvider } from "../providers";
 import { AuthFirewall, ErrorBoundary } from "../components";
 
-const Progress = dynamic(() => import("../components/utils/Progress"), {
-	ssr: false,
-});
-
 const App = ({
 	Component,
 	pageProps: { session, ...pageProps },
@@ -54,7 +50,6 @@ const App = ({
 						<SocketProvider>
 							<QueryClientProvider client={queryClient}>
 								<Hydrate state={pageProps.dehydratedState}>
-									<Progress />
 									{Component.auth ? (
 										<AuthFirewall auth={Component.auth}>
 											<Component {...pageProps} />
