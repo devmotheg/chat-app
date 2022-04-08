@@ -1,6 +1,6 @@
 # Blogging App
 
-A poor man's attempt to build an efficient realtime chat application... (Spoiler... kinda failed.)
+A poor man's attempt to build an efficient realtime chat application... (Spoiler: kinda failed.)
 
 ## Table of contents
 
