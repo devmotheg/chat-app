@@ -18,6 +18,8 @@ const webSocket = (io: Server) => {
 		const user = await User.findOne({ _s: socket.handshake.query._s });
 		const userId = user?._id;
 
+		if (!user) return;
+
 		// Open user tabs
 		if (userId in users) users[userId].push(socket);
 		else users[userId] = [socket];
